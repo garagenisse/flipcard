@@ -13,16 +13,23 @@ class NewCard extends React.Component {
 
     addEditCardHandler = (event) => {
         // Check edit or add, no more validation, empty is fine with me
-        
         let newCard = { 
             my_lang: this.state.my_lang,
             forreign_lang: this.state.forreign_lang,
-
         }
 
         // Send to parent
         this.props.newCardSubmitHandler(newCard)
-        
+
+        // Reset
+        this.setState({
+            my_lang: '',
+            forreign_lang: '',
+        })
+
+        this.MyLangInput.focus()
+
+
         // Prevent default action of submit button
         event.preventDefault();
       };
@@ -39,7 +46,7 @@ class NewCard extends React.Component {
             <form onSubmit={this.addEditCardHandler}>
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
-                        <input className="input" type="text" placeholder="Mitt språk" name="my_lang" onChange={this.newCardChangeHandler}/>
+                        <input className="input" ref={(input) => { this.MyLangInput = input; }} type="text" placeholder="Mitt språk" name="my_lang" value={this.state.my_lang} onChange={this.newCardChangeHandler}/>
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope"></i>
                         </span>
@@ -50,7 +57,7 @@ class NewCard extends React.Component {
                 </div>
                 <div className="field">
                     <p className="control has-icons-left">
-                        <input className="input" type="text" placeholder="Nytt språk" name="forreign_lang" onChange={this.newCardChangeHandler} />
+                        <input className="input" type="text" placeholder="Nytt språk" name="forreign_lang" value={this.state.forreign_lang} onChange={this.newCardChangeHandler} />
                         <span className="icon is-small is-left">
                             <i className="fas fa-lock"></i>
                         </span>

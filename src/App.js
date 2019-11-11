@@ -2,7 +2,7 @@ import React from 'react';
 import Flip from './components/Flip'
 import NewCard from './components/NewCard'
 import './App.css';
-import { anyTypeAnnotation } from '@babel/types';
+import { anyTypeAnnotation, tsImportEqualsDeclaration } from '@babel/types';
 
 class App extends React.Component {
 
@@ -32,13 +32,12 @@ class App extends React.Component {
 
     console.log("Remaining: ", remaining)
     do {
-      ix = Math.floor(Math.random() * this.props.cards.length)
+      ix = Math.floor(Math.random() * cards.length)
       card = cards[ix]  
     }
     while((Math.random() * 100) > card.factor  )
 
     return ix
-
   }
 
   rateHard() {
@@ -59,11 +58,14 @@ class App extends React.Component {
 
   removeCard() {
     console.log("Remove card: ",this.state.cards[this.state.currentCard].my_lang)
-    var cards = this.state.cards;
-    cards[this.state.currentCard].factor = 0;
-    var ix = this.randomizeCard(this.state.cards)
-    this.setState({currentCard: ix, cards: cards})
-  
+
+    this.setState(state => {
+      const cards = this.state.cards.filter((elem, i) => { return !(this.state.currentCard === i)})
+      return {
+        cards : cards,
+        currentCard : this.randomizeCard(cards)
+      };
+    });  
   }
 
   handleNewCard(newCard) {
@@ -73,11 +75,10 @@ class App extends React.Component {
     this.setState(state => {
       const cards = state.cards.concat(newCard);
       return {
-        cards
+        cards : cards,
+        currentCard : this.randomizeCard(cards)
       };
     });
-    this.state.cards.push()
-    // this.setState({value: e.target.value});
   } 
 
   render() {
