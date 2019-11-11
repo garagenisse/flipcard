@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/flipcard/static/css/main.b100e6da.chunk.css",
-    "main.js": "/flipcard/static/js/main.c9c57ed2.chunk.js",
-    "main.js.map": "/flipcard/static/js/main.c9c57ed2.chunk.js.map",
+    "main.js": "/flipcard/static/js/main.5a6ad0bf.chunk.js",
+    "main.js.map": "/flipcard/static/js/main.5a6ad0bf.chunk.js.map",
     "runtime-main.js": "/flipcard/static/js/runtime-main.526e6fda.js",
     "runtime-main.js.map": "/flipcard/static/js/runtime-main.526e6fda.js.map",
     "static/js/2.4153d0bc.chunk.js": "/flipcard/static/js/2.4153d0bc.chunk.js",
     "static/js/2.4153d0bc.chunk.js.map": "/flipcard/static/js/2.4153d0bc.chunk.js.map",
     "index.html": "/flipcard/index.html",
-    "precache-manifest.e437956873d98b7c61f04e0aee18d46d.js": "/flipcard/precache-manifest.e437956873d98b7c61f04e0aee18d46d.js",
+    "precache-manifest.63c3b03815ce86b5f3edd0d8af27ed6c.js": "/flipcard/precache-manifest.63c3b03815ce86b5f3edd0d8af27ed6c.js",
     "service-worker.js": "/flipcard/service-worker.js",
     "static/css/main.b100e6da.chunk.css.map": "/flipcard/static/css/main.b100e6da.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.526e6fda.js",
     "static/js/2.4153d0bc.chunk.js",
     "static/css/main.b100e6da.chunk.css",
-    "static/js/main.c9c57ed2.chunk.js"
+    "static/js/main.5a6ad0bf.chunk.js"
   ]
 }
