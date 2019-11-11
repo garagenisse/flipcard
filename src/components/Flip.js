@@ -13,13 +13,6 @@ class Flip extends React.Component {
         console.log("Construct flip")
     }
 
-    newMyLangHandler = (event) => {
-        this.setState({ my_lang: event.target.value });
-    }
-    newForreignLangHandler = (event) => {
-        this.setState({ forreign_lang: event.target.value });
-    }
-
     toggleCard() {
         this.setState({ flipped: !this.state.flipped });
     }

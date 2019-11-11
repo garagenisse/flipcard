@@ -7,19 +7,36 @@ class NewCard extends React.Component {
 
         this.state = {
             my_lang: '',
-            forreign_lang: ''
+            forreign_lang: '',
         }
     }
 
+    addEditCardHandler = (event) => {
+        // Check edit or add, no more validation, empty is fine with me
+        
+        let newCard = { 
+            my_lang: this.state.my_lang,
+            forreign_lang: this.state.forreign_lang,
+
+        }
+
+        // Send to parent
+        this.props.newCardSubmitHandler(newCard)
+        
+        // Prevent default action of submit button
+        event.preventDefault();
+      };
+
     newCardChangeHandler = (event) => {
-        let nam = event.target.name;
+        let name = event.target.name;
         let val = event.target.value;
-        this.setState({[nam]: val});
+        console.log("Changed: ", name, " to: ", val)
+        this.setState({[name]: val});
       }
 
     render() {
         return (
-            <form onSubmit={this.newCardSubmitHandler}>
+            <form onSubmit={this.addEditCardHandler}>
                 <div className="field">
                     <p className="control has-icons-left has-icons-right">
                         <input className="input" type="text" placeholder="Mitt språk" name="my_lang" onChange={this.newCardChangeHandler}/>

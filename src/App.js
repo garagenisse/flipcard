@@ -66,6 +66,20 @@ class App extends React.Component {
   
   }
 
+  handleNewCard(newCard) {
+    newCard.factor = 100
+    console.log("NewCard: ", newCard) 
+
+    this.setState(state => {
+      const cards = state.cards.concat(newCard);
+      return {
+        cards
+      };
+    });
+    this.state.cards.push()
+    // this.setState({value: e.target.value});
+  } 
+
   render() {
 
     console.log("Current card: ", this.state)
@@ -87,7 +101,7 @@ class App extends React.Component {
         </section>
         <section className="section">
           <div className="container">
-            <NewCard></NewCard>
+            <NewCard newCardSubmitHandler={this.handleNewCard.bind(this)}></NewCard>
           </div>
         </section>
       </div>
