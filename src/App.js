@@ -92,7 +92,7 @@ class App extends React.Component {
           <div className="container">
             <h1 className="title">Flipcard - Play</h1>
             <p className="subtitle is-small">
-              <i>Just click the card to flip it and check your knowledge, if you feel that you know it you can delete it. Its also possible to add a new anytime, Happy learning!</i>
+              <i>Klicka för att vända kort, lägg till nya eller tabort</i>
             </p>
   
             <Flip card={card} removeCard={this.removeCard.bind(this)} rateEasy={this.rateEasy.bind(this) } rateHard={this.rateHard.bind(this)} ></Flip>
